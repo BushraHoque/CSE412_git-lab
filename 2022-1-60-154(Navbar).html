@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6caaf1;
+      padding: 10px 20px;
+    }
+
+    .navbar .logo {
+      color: #fff;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .navbar .marquee {
+      color: #e19838;
+    }
+
+    .nav-item {
+      position: relative;
+      margin-left: 20px;
+      padding: 10px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .nav-item .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #979292;
+      min-width: 150px;
+      border: 1px solid #b7abab;
+      z-index: 1000;
+    }
+
+    .nav-item .dropdown a {
+      display: block;
+      padding: 8px 12px;
+      color: #fff;
+      text-decoration: none;
+      background-color: #333;
+    }
+
+    .nav-item .dropdown a:hover {
+      background-color: #555;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    .main-wrapper {
+      display: flex;
+      margin: 20px;
+    }
+
+    .sidebar {
+      width: 25%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar a:hover {
+      color: #0073e6;
+      font-weight: bold;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-item {
+        margin-left: 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .content {
+        margin-top: 20px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">East West University</div>
+    <div class="latest-news-marquee-mobile">
+      <marquee class="marquee" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        <span class="news-ticker-ball"></span>
+        <a href="https://www.ewubd.edu/notice-details/obituary-sad-demise-syed-manzur-elahi" target="_blank">
+          Obituary: Sad demise of Syed Manzur Elahi
+        </a>
+        <a href="https://crtewu.org/notice-detail/call-papers-east-west-journal-business-and-social-studies-vol-13-2025-0" target="_blank">
+          ##Call for Papers: East West Journal Of Business and Social Studies - Vol. 13, 2025
+        </a>
+        &nbsp;&nbsp; &nbsp;&nbsp;
+      </marquee>
+      <ul class="nav-menu">
+        <li class="nav-item">Home
+          <div class="dropdown">
+            <a href="#">Overview</a>
+            <a href="#">Notice</a>
+            <a href="#">Updates</a>
+            <a href="#">Details</a>
+          </div>
+        </li>
+        <li class="nav-item">About
+          <div class="dropdown">
+            <a href="#">History</a>
+            <a href="#">Mission</a>
+            <a href="#">Vision</a>
+            <a href="#">Syndicates</a>
+          </div>
+        </li>
+        <li class="nav-item">Authority
+          <div class="dropdown">
+            <a href="#">Board of Trustees</a>
+            <a href="#">Vice Chancellor</a>
+            <a href="#">Pro Vice Chancellor</a>
+            <a href="#">Departments</a>
+          </div>
+        </li>
+        <li class="nav-item">Admissions
+          <div class="dropdown">
+            <a href="#">Apply Now</a>
+            <a href="#">Tuition & Fees</a>
+            <a href="#">Session</a>
+          </div>
+        </li>
+        <li class="nav-item">Contact
+          <div class="dropdown">
+            <a href="#">Email</a>
+            <a href="#">Phone</a>
+            <a href="#">LinkedIn</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-user-circle"></i>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-wrapper">
+    <aside class="sidebar">
+      <h3>Sections</h3>
+      <ul>
+        <li><a href="#">Details</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact Info</a></li>
+        <li><a href="#">Convocation Apply</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Welcome to East West University</h1>
+      <p>This is the home page of EWU. To get more info contact with us.</p>
+      <p>The navigation bar above shows similarities to the first navbar on ewubd.edu.</p>
+    </main>
+  </div>
+</body>
+</html>
