@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+          }
+    
+          .head {
+            width: 100px;
+            height: 100px;
+            background-color: #175a76;
+            border-radius: 50%;
+            position: relative;
+          }
+    
+          .neck {
+            width: 20px;
+            height: 10px;
+            background-color: #175a76;
+            margin-top: -5px;
+          }
+    
+          .body {
+            width: 150px;
+            height: 120px;
+            background-color: #175a76;
+            position: relative;
+          }
+    
+          .arm {
+            width: 30px;
+            height: 100px;
+            background-color: #175a76;
+            position: absolute;
+            top: 10px;
+          }
+    
+          .left-arm {
+            left: -40px;
+          }
+    
+          .right-arm {
+            right: -40px;
+          }
+    
+          .eye {
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+          }
+    
+          .eye-left {
+            left: 30px;
+          }
+    
+          .eye-right {
+            right: 30px;
+          }
+    
+          .mouth {
+            width: 20px;
+            height: 5px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="head">
+            <div class="eye eye-left"></div>
+            <div class="eye eye-right"></div>
+            <div class="mouth"></div>
+          </div>
+          <div class="neck"></div>
+          <div class="body">
+            <div class="arm left-arm"></div>
+            <div class="arm right-arm"></div>
+          </div>
+        </div>
+      </body>
+</html>
